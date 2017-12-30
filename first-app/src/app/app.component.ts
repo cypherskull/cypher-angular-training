@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
   onChangeTitleClick(){
-    this.title='A dummy app'
+  	this.title = 'A dummy app'
   }
 }

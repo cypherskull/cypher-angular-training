@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector : 'app-greet',
-    templateUrl : 'greeter.component.html'
+	selector : 'app-greeter',
+	templateUrl : 'greeter.component.html'
 })
+export class GreeterComponent{
+	message : string = '';
 
-export class GreeterComponent {
-    message : string = '';
-    onGreetClick(){
-        this.message='User actioned message';
-    }
+	onGreetClick(name : string = ''){
+		this.message = 'Hi ' + name + ', Have a nice day!';
+	}
 }

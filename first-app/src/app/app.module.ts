@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
-import { CalculatorOneComponent } from './calculator/calc.component';
-import { Calc2Component } from './calculator/calc.component2';
-import { CalcResultComponent } from './calculator/calcresult.component';
+import { CalculatorOneComponent } from './calculator/calculatorOne.component';
+import { CalculatorTwoComponent } from './calculator/calculatorTwo.component';
+import { CalculatorResultComponent } from './calculator/calculatorResult.component';
+import { ProductsListComponent } from './products/productsList.component';
 
 
 @NgModule({
@@ -15,13 +15,13 @@ import { CalcResultComponent } from './calculator/calcresult.component';
     AppComponent,
     GreeterComponent,
     CalculatorOneComponent,
-    Calc2Component,
-    CalcResultComponent
+    CalculatorTwoComponent,
+    CalculatorResultComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
