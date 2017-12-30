@@ -1,0 +1,27 @@
+<hr>
+<!-- <section class="stats">
+    <span class="closed">{{getClosedBugCount()}}</span>
+    <span> / </span>
+    <span>{{bugs.length}}</span>
+</section> -->
+<bug-stats [bugs]="bugs"></bug-stats>
+<section class="sort">
+    <label for="">Order By :</label>
+    <select [(ngModel)]="sortBugBy">
+        <option value="name">Name</option>
+        <option value="isClosed">IsClosed</option>
+    </select>
+    <label for="">Descending ? : </label>
+    <input type="checkbox" [(ngModel)]="isDesc">
+</section>
+<bug-edit (bugCreated)="onCreateBugClick($event)"></bug-edit>
+<section class="list">
+    <ol>
+        <li *ngFor="let bug of (bugs | sortpipe: sortBugBy : isDesc)" (click) = "onClickLi(bug)">
+            <span [ngClass]="{closed : bug.isClosed ===true}">{{bug.name | trimtext}}</span>
+            <div class="datetime">{{bug.createdAt | dtpipe}}</div>    
+        </li>
+        
+    </ol>
+    <input type="button" value="Remove Closed" (click)="onClickRemove()">
+</section>
